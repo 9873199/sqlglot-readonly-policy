@@ -1,0 +1,16 @@
+{
+  "time": "2026-11-12T04:13:24+08:00",
+  "records": [
+    {
+      "sha": "466a6443905f6684cfc38eea0422284231cd1182",
+      "tree_output": "160000 commit 76156197d0c3c71b066bf745a4817c4a915ed5cb\tsqlglot-integration-tests\n"
+    },
+    {
+      "sha": "05c7feaad36e75c7c1fdae99775c21570e6d3734",
+      "tree_output": "160000 commit 76156197d0c3c71b066bf745a4817c4a915ed5cb\tsqlglot-integration-tests\n"
+    }
+  ],
+  "unchanged": true,
+  "original_freeze_audit_untouched": true,
+  "integration_database_tests_not_run": true
+}

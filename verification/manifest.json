@@ -1,0 +1,169 @@
+{
+  "time": "2026-11-12T04:17:58+08:00",
+  "reviewed": true,
+  "frozen_commit": "05c7feaad36e75c7c1fdae99775c21570e6d3734",
+  "files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\Feedback.md",
+      "path": "Feedback.md",
+      "sha256": "fa328b940802837ce44d7032ea056d762a688997d408a1b71e27ab97e95e04a4"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\evidence-map.json",
+      "path": "evidence-map.json",
+      "sha256": "d5ae758c389c513b38be003ab7d114512f80925d21fe2ebb870aa0877a299b19"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\environment-reviewed.json",
+      "path": "environment-reviewed.json",
+      "sha256": "ff3a033d4401154660ec82d9bc4cae55cd58ad22ce50b9b5dac647abbff3d63a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\freeze-audit.json",
+      "path": "freeze-audit.json",
+      "sha256": "426d2529852f305cd49226a88cb7b424dde3a76dd95a59239b2d0fb5a5cf9b25"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\snapshot-proof.json",
+      "path": "snapshot-proof.json",
+      "sha256": "6e911def36a93ad65adf9666cdd0e28b96cb81d7a546f9eac5fba5a0887ae74d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\acceptance-command.json",
+      "path": "verification/acceptance-r1/acceptance-command.json",
+      "sha256": "9e4d348c1e8ab9225e4b5389fd299b8ebbe1a0d8364f54a6e03ac1971007d1ee"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\acceptance-support.json",
+      "path": "verification/acceptance-r1/acceptance-support.json",
+      "sha256": "8d376f81949a5d5b601b41864818bc23c762ebfd9ed59ce1f054135957ad79fb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\acceptance.log",
+      "path": "verification/acceptance-r1/acceptance.log",
+      "sha256": "a1d0544401656d3bb9b03a95cd3f13407e5cb9b39d10c4973f9858bea68ef298"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\acceptance.xml",
+      "path": "verification/acceptance-r1/acceptance.xml",
+      "sha256": "8a8ae29c3fb63b568e273f950ecd9ca722b17790232ccec0278162864e89cc4c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\regression-command.json",
+      "path": "verification/acceptance-r1/regression-command.json",
+      "sha256": "2a7acc798e95b4510f928b674185124542d3abda2dc61a88dacf56fa51773046"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\regression.log",
+      "path": "verification/acceptance-r1/regression.log",
+      "sha256": "dcc80523697c00ffc2296050970e803e09302c57a7731ff5ac5517737a67bef7"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\regression.xml",
+      "path": "verification/acceptance-r1/regression.xml",
+      "sha256": "ebfd5a83087097dd407c8ec3747ff4164a2e928d2ad954e31deb78eb63440392"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\sql-policy-cases.json",
+      "path": "verification/acceptance-r1/sql-policy-cases.json",
+      "sha256": "e2ef373705663a8ae8de35dd452c0c2a21e8ea0dae945c4c3368538cb27e5f7e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\sql_adapter.py",
+      "path": "verification/acceptance-r1/sql_adapter.py",
+      "sha256": "ebd2873277bd451f9b1b9f05a76076c05039070980a2dfb7e8ef275bbbbef8ab"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\test-results.json",
+      "path": "verification/acceptance-r1/test-results.json",
+      "sha256": "3b9dd361973dfbc616d3a5f3b91c703c18d9345e3dfc5017518d1c1b07d0e140"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\test_acceptance.py",
+      "path": "verification/acceptance-r1/test_acceptance.py",
+      "sha256": "94597e025403c81aa6fdab9ad4d0aeb592c5a00afd5651924e116f63c08a578e"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\controls-r1\\acceptance-command.json",
+      "path": "verification/controls-r1/acceptance-command.json",
+      "sha256": "a895c0e46e5f3ea6c836ac1bfa9a6c7542e9d569622a759c5e5b167b3533dca8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\controls-r1\\acceptance.log",
+      "path": "verification/controls-r1/acceptance.log",
+      "sha256": "d65dd9f210344f981a42e62a1570e9c1eba3fb6c337d40ad670f48aced5f459a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\controls-r1\\acceptance.xml",
+      "path": "verification/controls-r1/acceptance.xml",
+      "sha256": "d6aa95aa9e37f3c29568d0588ae7add9812c9a1a3e8064e3210965e3faa46c2f"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\controls-r1\\test-results.json",
+      "path": "verification/controls-r1/test-results.json",
+      "sha256": "356f1ab1f4c301f9d84e96e6b2ff9a5ba1c9c5e0fce21e42bb85a0e3f9bd0c5d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\controls-r1\\test_acceptance.py",
+      "path": "verification/controls-r1/test_acceptance.py",
+      "sha256": "70cb3518cd35c01607f61619f8a702970e31875dd6e237b54cf90562d3d8d5d3"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\observations-r1\\gitlink-followup-readonly.json",
+      "path": "verification/observations-r1/gitlink-followup-readonly.json",
+      "sha256": "f145106c0d8c2bc2267596455a99c71490b939378b03f4895c56370952ba83cf"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\observations-r1\\inspect_read_access.py",
+      "path": "verification/observations-r1/inspect_read_access.py",
+      "sha256": "363b9e988b38f1531e8e0dcb5290f5e2ebf0e74608f651e29ab82ed2244617c5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\observations-r1\\inspection-command.json",
+      "path": "verification/observations-r1/inspection-command.json",
+      "sha256": "d3bb1ed39f8c68a8da7179794daa3fe5a39bd840a60a9a2dc198f303bbcb8afa"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\observations-r1\\inspection-output.log",
+      "path": "verification/observations-r1/inspection-output.log",
+      "sha256": "fa0e800df3366e465ad0de69951b7fbad81b4c74a66063540a12ce35d284a193"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\observations-r1\\scope-decision-r2.json",
+      "path": "verification/observations-r1/scope-decision-r2.json",
+      "sha256": "8de1bac40f8e374c44b3e4437c2fef5abaa942aff6cc7ad72ce2469f92150816"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\actual-commands.json",
+      "path": "recording/actual-commands.json",
+      "sha256": "8c40f26b679523d4a61ff9e18b300e97f484956d616bba00051af44f97466164"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\content-review.json",
+      "path": "recording/content-review.json",
+      "sha256": "988a51b03e2df7b4b868607fb5e625c9a3d31d6fe8b707f551ef81393648dc7b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\recording-status.json",
+      "path": "recording/recording-status.json",
+      "sha256": "42c9f537c873fd3bae1b854fef6de4b5dd70791d3b550adbf9e58b26795cb9f1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\full-stream-check.json",
+      "path": "recording/full-stream-check.json",
+      "sha256": "dcd28fa05de73b8cc4d57bf9570ee9efcc904f90a22b92a0033a6770fb4c8d89"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\media-metadata.log",
+      "path": "recording/media-metadata.log",
+      "sha256": "ccb861f0769d4b7b32785446fcf410c4cd267b3e9870ab424c1a53639c9e1b41"
+    }
+  ],
+  "reproduction_readme": "独立验收说明\n\n冻结提交：https://github.com/9873199/sqlglot-readonly-policy/commit/05c7feaad36e75c7c1fdae99775c21570e6d3734\n实际解释器：3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]\n\n从冻结提交检出源码，用environment-reviewed.json的解释器和依赖复现各verification目录命令。acceptance-r1内regression仅tests/test_parser.py和tests/test_read_access.py，123通过/426子测试；同目录独立主验收42通过，sql_adapter.py只构造原生ReadPolicy、把原生拒绝转PermissionError并投影三元组，没有补安全逻辑。controls-r1直接测原生API，11通过；scope返回空和异常是显式故障注入。observations-r1为真实录屏命令的原生返回和原始日志，未执行任何SQL。integration gitlink保持原固定提交，另有只读核验记录；该子模块数据库测试未运行。保守分析所有CTE正文是实现公开策略。录屏为另写验证控制台，不是模型生成的业务页面。\n\n每组目录内的 *-command.json 保留真实参数、工作目录、PYTHONPATH、退出码和原始日志位置；test-results.json 与 JUnit XML 保留完整成绩。跨机器运行时把这些绝对路径映射到同一冻结 checkout 和自己的缓存目录，所有 --basetemp、XML 和构建输出均放在缓存里。依赖版本见 environment-reviewed.json。\n这些材料在模型单轮结束后生成，与原轨内测试分开，不代表项目方质检通过。原轨和视频只放各自的飞书附件。\n",
+  "excluded_engineering_attempts": [
+    {
+      "path": "prepare-sql-123.py",
+      "reason": "Preparation-only assertion assumed nonexistent tests/test_optimizer_scope.py; no evaluator or model invocation occurred. Corrected actual scope in inputs/scope-decision-r2.json, preserved original script."
+    }
+  ]
+}

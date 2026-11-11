@@ -1,0 +1,312 @@
+{
+  "purpose": "Independent planned inputs; not an executed verification record",
+  "dialect": "duckdb",
+  "default_catalog": "app",
+  "default_schema": "main",
+  "allowed_tables": [
+    [
+      "app",
+      "main",
+      "orders"
+    ],
+    [
+      "app",
+      "main",
+      "customers"
+    ]
+  ],
+  "allowed_pure_functions": [
+    "COUNT",
+    "SUM",
+    "ABS",
+    "COALESCE"
+  ],
+  "cases": [
+    {
+      "sql": "SELECT * FROM orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM app.main.orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM \"Orders\"",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT COUNT(*) FROM orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM secret",
+      "allow": false
+    },
+    {
+      "sql": "WITH orders AS (SELECT * FROM secret) SELECT * FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "WITH secret AS (SELECT * FROM orders) SELECT * FROM secret",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM orders o WHERE EXISTS (SELECT 1 FROM private.credentials c WHERE c.id=o.id)",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM orders UNION ALL SELECT * FROM customers",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ],
+        [
+          "app",
+          "main",
+          "customers"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM orders UNION ALL SELECT * FROM secret",
+      "allow": false
+    },
+    {
+      "sql": "WITH a AS (SELECT * FROM orders), b AS (SELECT * FROM a) SELECT * FROM b",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "WITH a AS (SELECT * FROM orders) SELECT * FROM (WITH a AS (SELECT * FROM secret) SELECT * FROM a) q",
+      "allow": false
+    },
+    {
+      "sql": "WITH RECURSIVE counter(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM counter WHERE n<3) SELECT * FROM counter",
+      "allow": true,
+      "tables": []
+    },
+    {
+      "sql": "WITH RECURSIVE r AS (SELECT * FROM orders UNION ALL SELECT o.* FROM orders o JOIN r ON o.id=r.id) SELECT * FROM r",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM read_csv('/tmp/data.csv')",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM read_parquet('https://example.invalid/private.parquet')",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM '/tmp/data.csv'",
+      "allow": false
+    },
+    {
+      "sql": "ATTACH '/tmp/private.db' AS private",
+      "allow": false
+    },
+    {
+      "sql": "COPY orders TO '/tmp/out.csv'",
+      "allow": false
+    },
+    {
+      "sql": "PRAGMA enable_external_access=true",
+      "allow": false
+    },
+    {
+      "sql": "CREATE TABLE stolen AS SELECT * FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "DELETE FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "INSERT INTO orders SELECT * FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "SELECT 1; /* second statement */ SELECT * FROM secret",
+      "allow": false
+    },
+    {
+      "sql": "SELECT unknown_function(id) FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "SELECT load_extension('httpfs')",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM (",
+      "allow": false
+    },
+    {
+      "sql": "SELECT ABS(id) FROM orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "WITH orders AS (SELECT * FROM customers) SELECT * FROM orders UNION ALL SELECT * FROM app.main.orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "customers"
+        ],
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "WITH orders(id) AS (SELECT id FROM customers) SELECT * FROM orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "customers"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM orders o WHERE EXISTS (SELECT 1 FROM customers c WHERE c.id=o.id)",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ],
+        [
+          "app",
+          "main",
+          "customers"
+        ]
+      ]
+    },
+    {
+      "sql": "WITH x AS (SELECT * FROM orders) SELECT * FROM x UNION ALL SELECT * FROM (WITH x AS (SELECT * FROM customers) SELECT * FROM x) q",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ],
+        [
+          "app",
+          "main",
+          "customers"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM orders WHERE id IN (SELECT id FROM customers WHERE id IN (SELECT id FROM secret))",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM query_table('secret')",
+      "allow": false
+    },
+    {
+      "sql": "SELECT * FROM read_json_auto('private.json')",
+      "allow": false
+    },
+    {
+      "sql": "UPDATE orders SET id=1",
+      "allow": false
+    },
+    {
+      "sql": "SELECT 1; -- comment before write\nDELETE FROM orders",
+      "allow": false
+    },
+    {
+      "sql": "SELECT \"read_csv('private.csv')\" FROM orders",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "orders"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT * FROM \"app\".\"main\".\"CUSTOMERS\"",
+      "allow": true,
+      "tables": [
+        [
+          "app",
+          "main",
+          "customers"
+        ]
+      ]
+    },
+    {
+      "sql": "WITH secret AS (SELECT 1) SELECT * FROM app.main.secret",
+      "allow": false
+    }
+  ]
+}

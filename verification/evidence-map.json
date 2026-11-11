@@ -1,0 +1,128 @@
+{
+  "time": "2026-11-12T04:17:58+08:00",
+  "uid": 123,
+  "frozen_commit": "05c7feaad36e75c7c1fdae99775c21570e6d3734",
+  "native_trajectory_sha256": "df460e8dcc300e71771ab08e1c4734c9a6a2dc500d68d66d714b77bf9f44f3a9",
+  "private_reasoning_used": false,
+  "requirements": [
+    {
+      "requirement": "Scope-based physical access set for CTE shadowing, recursion, correlated subqueries, set operations and quoted names",
+      "source": "sqlglot/optimizer/read_access.py:334-449",
+      "result": "verified for explicit independent inputs",
+      "evidence": "verification/acceptance-r1:42 passed"
+    },
+    {
+      "requirement": "Uniform namespace completion and caller-supplied table/function policy",
+      "source": "read_access.py:_resolve_table,_function_names",
+      "result": "verified for tested defaults, full qualification and case normalization",
+      "evidence": "verification/acceptance-r1,controls-r1"
+    },
+    {
+      "requirement": "Reject files, ATTACH/COPY/PRAGMA/DDL/DML, multi-statements and unknown functions",
+      "source": "read_access.py:264-303,307-328,451-481,_find_string_table_sources",
+      "result": "verified; scanner only parses",
+      "evidence": "verification/acceptance-r1,controls-r1"
+    },
+    {
+      "requirement": "Explicit rejection on parse/scope failure; never empty set on failure; reusable API",
+      "source": "AccessResult,ReadAccessAnalyzer.analyze",
+      "result": "verified under injected empty/exception scopes and analyzer reuse",
+      "evidence": "verification/controls-r1:11 passed"
+    },
+    {
+      "requirement": "Per-query expected access sets and no-database usage example",
+      "source": "tests/test_read_access.py; module docstring",
+      "result": "verified; selected regression123 passed/426subtests, native44/102",
+      "evidence": "verification/acceptance-r1,observations-r1; original548-549,567-568"
+    }
+  ],
+  "observable_process": [
+    {
+      "lines": [
+        81,
+        82
+      ],
+      "fact": "inspects token stream for DuckDB string literal table sources before implementation"
+    },
+    {
+      "lines": [
+        233,
+        236,
+        239,
+        244,
+        249
+      ],
+      "fact": "first native tests reveal3 failing checks; revises new tests for conservative all-CTE analysis and actual parse refusals; subsequent40passed98subtests. Final independent expectations remain separately tested."
+    },
+    {
+      "lines": [
+        256,
+        257,
+        260,
+        261,
+        266,
+        267
+      ],
+      "fact": "inspects untrusted case_sensitive metadata propagation and clears it before identifier normalization"
+    },
+    {
+      "lines": [
+        548,
+        549
+      ],
+      "fact": "demonstrates allowed source, forbidden source, multiple statements and file scan without DB execution"
+    },
+    {
+      "lines": [
+        563,
+        564,
+        567,
+        568
+      ],
+      "fact": "updates schema-qualified function matching; final44passed102subtests"
+    },
+    {
+      "lines": [
+        571
+      ],
+      "fact": "final response describes scope resolution, explicit failure result, conservative CTE policy and no-I/O boundary"
+    }
+  ],
+  "independent_suites": [
+    {
+      "path": "verification/acceptance-r1",
+      "scope": "regression:parser+new module only",
+      "passed": 123,
+      "subtests_passed": 426,
+      "failures": 0
+    },
+    {
+      "path": "verification/acceptance-r1",
+      "scope": "independent acceptance",
+      "tests": 42,
+      "passed": 42,
+      "failures": 0
+    },
+    {
+      "path": "verification/controls-r1",
+      "tests": 11,
+      "passed": 11,
+      "failures": 0
+    },
+    {
+      "path": "verification/observations-r1",
+      "kind": "Direct native diagnostic recorded continuously; no separate test count"
+    }
+  ],
+  "excluded_engineering_attempts": [
+    {
+      "path": "prepare-sql-123.py",
+      "reason": "Preparation-only assertion assumed nonexistent tests/test_optimizer_scope.py; no evaluator or model invocation occurred. Corrected actual scope in inputs/scope-decision-r2.json, preserved original script."
+    }
+  ],
+  "unverified": [
+    "Database-executing full optimizer and integration submodule suites not run; pure parser/new-module regression only.",
+    "Conservative analysis includes all CTE definitions, including unused bodies; no execution-plan minimality claim.",
+    "No general proof of arbitrary UDF purity or all DuckDB syntax; caller must supply trusted policy."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "time": "2026-11-12T04:10:43+08:00",
+  "repository": "9873199/sqlglot-readonly-policy",
+  "visibility": "public",
+  "public_unauthenticated_api_verified": true,
+  "initial_sha": "466a6443905f6684cfc38eea0422284231cd1182",
+  "final_sha": "05c7feaad36e75c7c1fdae99775c21570e6d3734",
+  "initial_url": "https://github.com/9873199/sqlglot-readonly-policy/commit/466a6443905f6684cfc38eea0422284231cd1182",
+  "final_url": "https://github.com/9873199/sqlglot-readonly-policy/commit/05c7feaad36e75c7c1fdae99775c21570e6d3734",
+  "all_frozen_blob_hashes_verified": true,
+  "initial_is_ancestor": true,
+  "model_commit_chain_preserved": true,
+  "frozen_files": 363,
+  "public_branch": "review-uid123-high-resume-20261111",
+  "automatic_submission": false,
+  "user_review_required": true
+}

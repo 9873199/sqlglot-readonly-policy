@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "D:\\hc\\userFeedback\\cache\\envs\\uf-20261111-sec-09-sql-read-policy\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact\\tests\\test_parser.py",
+    "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact\\tests\\test_read_access.py",
+    "--basetemp",
+    "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\tmp-regression",
+    "--junitxml",
+    "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\regression.xml",
+    "--disable-warnings"
+  ],
+  "cwd": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact",
+  "PYTHONPATH": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact;D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact\\src",
+  "python": "D:\\hc\\userFeedback\\cache\\envs\\uf-20261111-sec-09-sql-read-policy\\Scripts\\python.exe",
+  "exit_code": 0,
+  "seconds": 61.11,
+  "log": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\acceptance-r1\\regression.log"
+}

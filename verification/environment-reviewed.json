@@ -1,0 +1,23 @@
+{
+  "time": "2026-11-12T04:17:58+08:00",
+  "container_used": false,
+  "python": "D:\\hc\\userFeedback\\cache\\envs\\uf-20261111-sec-09-sql-read-policy\\Scripts\\python.exe",
+  "dependencies": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "module_paths": {
+      "sqlglot": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact\\sqlglot\\__init__.py",
+      "sqlglot.optimizer.read_access": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\frozen-artifact\\sqlglot\\optimizer\\read_access.py"
+    },
+    "packages": {
+      "sqlglot": "0.0.1.dev1",
+      "pytest": "9.2.0"
+    }
+  },
+  "external_dependencies": [
+    "Native Windows Python and pure-Python SQLGlot; no container",
+    "AST-only inputs; no SQL database connection and no execution of untrusted SQL",
+    "Database-backed optimizer/integration suites not run; original integration gitlink independently checked unchanged"
+  ],
+  "module_import_verified": true
+}

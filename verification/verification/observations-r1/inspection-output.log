@@ -1,0 +1,34 @@
+SQL: WITH orders AS (SELECT * FROM customers) SELECT * FROM orders
+Allowed: True Tables: ['app.main.customers']
+Reason: None
+
+SQL: WITH orders AS (SELECT * FROM secret) SELECT * FROM orders
+Allowed: False Tables: None
+Reason: unauthorized table(s): app.main.secret
+
+SQL: SELECT * FROM orders WHERE id IN (SELECT id FROM secret)
+Allowed: False Tables: None
+Reason: unauthorized table(s): app.main.secret
+
+SQL: WITH RECURSIVE r(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM r WHERE n<3) SELECT * FROM r
+Allowed: True Tables: []
+Reason: None
+
+SQL: SELECT * FROM read_csv('private.csv')
+Allowed: False Tables: None
+Reason: file-scanning table function is not allowed: READ_CSV('private.csv')
+
+SQL: SELECT 1; -- another statement
+DELETE FROM orders
+Allowed: False Tables: None
+Reason: expected exactly one statement, found 2; multiple statements are not allowed
+
+SQL: SELECT * FROM (
+Allowed: False Tables: None
+Reason: cannot parse SQL: Expected table name but got <Token token_type: TokenType.SENTINEL, text: SENTINEL, line: 1, col: 1, start: 0, end: 0, comments: []>. Line 1, Col: 15.
+  SELECT * FROM [4m([0m
+
+SQL: SELECT 1
+Allowed: True Tables: []
+Reason: None
+

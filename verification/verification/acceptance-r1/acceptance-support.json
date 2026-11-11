@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "sql_adapter.py",
+      "sha256": "ebd2873277bd451f9b1b9f05a76076c05039070980a2dfb7e8ef275bbbbef8ab",
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\inputs\\sql_adapter.py"
+    },
+    {
+      "path": "sql-policy-cases.json",
+      "sha256": "e2ef373705663a8ae8de35dd452c0c2a21e8ea0dae945c4c3368538cb27e5f7e",
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\inputs\\sql-policy-cases.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-12T04:13:24+08:00",
+  "regression": [
+    "tests/test_parser.py",
+    "tests/test_read_access.py"
+  ],
+  "not_run": [
+    "tests/test_optimizer.py"
+  ],
+  "reason": "Pure parser and read-access checks only. Full optimizer tests import database execution dependencies/multiprocessing. Independent malicious SQL is parsed only.",
+  "preparation_error": "prepare-sql-123.py assumed tests/test_optimizer_scope.py existed; actual rg inventory shows no such file. This stopped preparation before evaluation. Existing adapter/cases retained, no product changes.",
+  "adapter": "Native policy construction, rejection mapping and tuple projection only."
+}
