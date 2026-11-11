@@ -2145,6 +2145,16 @@ class Parser:
 
         if not advance:
             self._retreat(index)
+        else:
+            tokens = self._tokens
+            for i in range(index, self._index - 1):
+                comments = tokens[i].comments
+                if comments:
+                    following = tokens[i + 1]
+                    comments.extend(following.comments)
+                    following.comments = comments
+                    tokens[i].comments = []
+            self._prev_comments = self._prev.comments
 
         return True
 
@@ -3470,6 +3480,8 @@ class Parser:
         if not self._match(TokenType.PARTITION_BY):
             return []
 
+        comments = self._prev_comments
+
         if self._next.token_type in self.ID_VAR_TOKENS and self._match_text_seq("EXCLUDING"):
             return [
                 self.expression(
@@ -3477,7 +3489,10 @@ class Parser:
                 )
             ]
 
-        return self._parse_csv(self._parse_disjunction)
+        expressions = self._parse_csv(self._parse_disjunction)
+        if expressions and comments:
+            expressions[0].add_comments(comments, prepend=True)
+        return expressions
 
     def _parse_partition_bound_spec(self) -> exp.PartitionBoundSpec:
         def _parse_partition_bound_expr() -> exp.Expr | None:
