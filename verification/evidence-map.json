@@ -112,16 +112,27 @@
     {
       "path": "verification/observations-r1",
       "kind": "Direct native diagnostic recorded continuously; no separate test count"
+    },
+    {
+      "path": "verification/automatic-regression-r1",
+      "scope": "prior automatic parser+optimizer regression",
+      "passed": 222,
+      "subtests_passed": 5583,
+      "failures": 0
     }
   ],
   "excluded_engineering_attempts": [
     {
       "path": "prepare-sql-123.py",
       "reason": "Preparation-only assertion assumed nonexistent tests/test_optimizer_scope.py; no evaluator or model invocation occurred. Corrected actual scope in inputs/scope-decision-r2.json, preserved original script."
+    },
+    {
+      "path": "delivery-revisions/r2",
+      "reason": "Reviewer missed already-completed automatic root regression and wrote inaccurate unrun scope. Correction changes annotation only, adds genuine existing raw logs, keeps score5 and all frozen sources/native/video unchanged."
     }
   ],
   "unverified": [
-    "Database-executing full optimizer and integration submodule suites not run; pure parser/new-module regression only.",
+    "Integration submodule suite and full project suite not run. Automatic parser+optimizer regression did run:222 passed/5583 subtests; later parser+new-module regression123/426 is a separate scope.",
     "Conservative analysis includes all CTE definitions, including unused bodies; no execution-plan minimality claim.",
     "No general proof of arbitrary UDF purity or all DuckDB syntax; caller must supply trusted policy."
   ]

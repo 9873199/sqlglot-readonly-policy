@@ -4,19 +4,19 @@
   "frozen_commit": "05c7feaad36e75c7c1fdae99775c21570e6d3734",
   "files": [
     {
-      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\Feedback.md",
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\delivery-revisions\\r2\\Feedback-corrected-publication.md",
       "path": "Feedback.md",
-      "sha256": "fa328b940802837ce44d7032ea056d762a688997d408a1b71e27ab97e95e04a4"
+      "sha256": "fe08756db2d22f37ca9318c86a89dd1034bcb43d1969d4a859c47b809600acbb"
     },
     {
       "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\evidence-map.json",
       "path": "evidence-map.json",
-      "sha256": "d5ae758c389c513b38be003ab7d114512f80925d21fe2ebb870aa0877a299b19"
+      "sha256": "214e0f8475a413b6c952e706426d450beb3c8b5fdf0cc3547255b13b17c1e8aa"
     },
     {
       "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\environment-reviewed.json",
       "path": "environment-reviewed.json",
-      "sha256": "ff3a033d4401154660ec82d9bc4cae55cd58ad22ce50b9b5dac647abbff3d63a"
+      "sha256": "db24421510ce8b4a87b1f949036567640acebef0f30d640ba9d9daee32644013"
     },
     {
       "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\freeze-audit.json",
@@ -157,13 +157,40 @@
       "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\recording\\r1\\media-metadata.log",
       "path": "recording/media-metadata.log",
       "sha256": "ccb861f0769d4b7b32785446fcf410c4cd267b3e9870ab424c1a53639c9e1b41"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\automatic-regression-r1\\regression-command.json",
+      "path": "verification/automatic-regression-r1/regression-command.json",
+      "sha256": "3ea567d94174c0878cb1794b1c3716e262491b0f73e1328cc923185e733b15fb"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\automatic-regression-r1\\regression.log",
+      "path": "verification/automatic-regression-r1/regression.log",
+      "sha256": "6fab189362f03c65a5c6e36e85a7309761c2d8dc7d00f67c3f4380e72e44bf20"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\automatic-regression-r1\\regression.xml",
+      "path": "verification/automatic-regression-r1/regression.xml",
+      "sha256": "d4049620f0997a3a90f239fc28081654cb5a76f0274f190c6844783946cad03b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\automatic-regression-r1\\scope-clarification.json",
+      "path": "verification/automatic-regression-r1/scope-clarification.json",
+      "sha256": "b78c65085671d84f7ecfcfd6f787cc26d7e618ebd6793f3a6635b0fa59c7e16a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\execution-security-high-resume-20261111\\evaluation\\uf-20261111-sec-09-sql-read-policy\\verification\\automatic-regression-r1\\test-results.json",
+      "path": "verification/automatic-regression-r1/test-results.json",
+      "sha256": "c79ae4a525d6f922c8b3b40c6e0d73edf0038775239cc87909a957258d39b0b8"
     }
   ],
-  "reproduction_readme": "独立验收说明\n\n冻结提交：https://github.com/9873199/sqlglot-readonly-policy/commit/05c7feaad36e75c7c1fdae99775c21570e6d3734\n实际解释器：3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]\n\n从冻结提交检出源码，用environment-reviewed.json的解释器和依赖复现各verification目录命令。acceptance-r1内regression仅tests/test_parser.py和tests/test_read_access.py，123通过/426子测试；同目录独立主验收42通过，sql_adapter.py只构造原生ReadPolicy、把原生拒绝转PermissionError并投影三元组，没有补安全逻辑。controls-r1直接测原生API，11通过；scope返回空和异常是显式故障注入。observations-r1为真实录屏命令的原生返回和原始日志，未执行任何SQL。integration gitlink保持原固定提交，另有只读核验记录；该子模块数据库测试未运行。保守分析所有CTE正文是实现公开策略。录屏为另写验证控制台，不是模型生成的业务页面。\n\n每组目录内的 *-command.json 保留真实参数、工作目录、PYTHONPATH、退出码和原始日志位置；test-results.json 与 JUnit XML 保留完整成绩。跨机器运行时把这些绝对路径映射到同一冻结 checkout 和自己的缓存目录，所有 --basetemp、XML 和构建输出均放在缓存里。依赖版本见 environment-reviewed.json。\n这些材料在模型单轮结束后生成，与原轨内测试分开，不代表项目方质检通过。原轨和视频只放各自的飞书附件。\n",
+  "reproduction_readme": "独立验收说明\n\n冻结提交：https://github.com/9873199/sqlglot-readonly-policy/commit/05c7feaad36e75c7c1fdae99775c21570e6d3734\n实际解释器：3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]\n\n从冻结提交检出源码，用environment-reviewed.json的解释器和依赖复现各verification目录命令。acceptance-r1内regression仅tests/test_parser.py和tests/test_read_access.py，123通过/426子测试；同目录独立主验收42通过，sql_adapter.py只构造原生ReadPolicy、把原生拒绝转PermissionError并投影三元组，没有补安全逻辑。controls-r1直接测原生API，11通过；scope返回空和异常是显式故障注入。observations-r1为真实录屏命令的原生返回和原始日志，未执行任何SQL。integration gitlink保持原固定提交，另有只读核验记录；该子模块数据库测试未运行。保守分析所有CTE正文是实现公开策略。录屏为另写验证控制台，不是模型生成的业务页面。\n\n每组目录内的 *-command.json 保留真实参数、工作目录、PYTHONPATH、退出码和原始日志位置；test-results.json 与 JUnit XML 保留完整成绩。跨机器运行时把这些绝对路径映射到同一冻结 checkout 和自己的缓存目录，所有 --basetemp、XML 和构建输出均放在缓存里。依赖版本见 environment-reviewed.json。\n这些材料在模型单轮结束后生成，与原轨内测试分开，不代表项目方质检通过。原轨和视频只放各自的飞书附件。\n\n\n从冻结提交检出源码，用environment-reviewed.json的解释器和依赖复现各verification目录命令。acceptance-r1内regression仅tests/test_parser.py和tests/test_read_access.py，123通过/426子测试；同目录独立主验收42通过，sql_adapter.py只构造原生ReadPolicy、把原生拒绝转PermissionError并投影三元组，没有补安全逻辑。controls-r1直接测原生API，11通过；scope返回空和异常是显式故障注入。observations-r1为真实录屏命令的原生返回和原始日志，未执行任何SQL。integration gitlink保持原固定提交，另有只读核验记录；该子模块数据库测试未运行。保守分析所有CTE正文是实现公开策略。录屏为另写验证控制台，不是模型生成的业务页面。 后台自动后处理在04:09已经跑过tests/test_parser.py和tests/test_optimizer.py，222通过/5583子测试通过，原始命令与日志在automatic-regression-r1；该范围会执行仓库自带受控数据库fixture。之前对未运行optimizer的表述错误，现已更正；独立恶意SQL从未送数据库执行。integration子模块仍未运行。",
   "excluded_engineering_attempts": [
     {
       "path": "prepare-sql-123.py",
       "reason": "Preparation-only assertion assumed nonexistent tests/test_optimizer_scope.py; no evaluator or model invocation occurred. Corrected actual scope in inputs/scope-decision-r2.json, preserved original script."
     }
-  ]
+  ],
+  "annotation_link_revision": "Corrected publication body preserved in delivery-revisions/r2/Feedback-corrected-publication.md; final draft appends new verified evidence URL.",
+  "scope_correction": "Prior evidence statements that optimizer was not run are superseded by automatic-regression-r1/scope-clarification.json."
 }

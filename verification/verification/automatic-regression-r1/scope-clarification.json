@@ -1,0 +1,10 @@
+{
+  "time": "2026-11-12T04:21:21+08:00",
+  "reason": "Correct inaccurate statement that optimizer regression was not run. Background postprocessing already completed parser+optimizer222passed/5583subtests at04:09. Include those unchanged raw outputs.",
+  "score_unchanged": 5,
+  "native_and_product_and_video_unchanged": true,
+  "independent_adversarial_SQL_executed": false,
+  "automatic_regression_uses_repository_controlled_fixtures": true,
+  "integration_submodule_not_run": true,
+  "old_evidence_url": "https://github.com/9873199/sqlglot-readonly-policy/tree/8db48f7a6eab390b88592d20d64a015a3e65ad19/verification"
+}

@@ -17,7 +17,7 @@
   "external_dependencies": [
     "Native Windows Python and pure-Python SQLGlot; no container",
     "AST-only inputs; no SQL database connection and no execution of untrusted SQL",
-    "Database-backed optimizer/integration suites not run; original integration gitlink independently checked unchanged"
+    "Automatic parser+optimizer regression uses installed DuckDB/pandas and trusted repository fixtures; independent adversarial inputs are AST-only. Integration submodule not run; gitlink checked unchanged."
   ],
   "module_import_verified": true
 }
